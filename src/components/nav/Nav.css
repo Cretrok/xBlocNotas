@@ -1,0 +1,66 @@
+.lateral-izq{
+  position: fixed;
+  z-index: 999;
+  left: -180px;
+  top: 0;
+  width: 180px;
+  height: 100vh;
+  background: #fff;
+  transition: all 500ms;
+}
+.lateral-izq.visible{
+  left: 0;
+  transition: all 500ms;
+}
+
+.lateral-izq buTton{
+  outline: none;
+  border: none;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  color: #00A99D;
+  cursor: pointer;
+}
+
+.lateral-izq form {
+  width: 100%;
+  position: absolute;
+  margin-top: 30px;
+}
+
+.lateral-izq form input{
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  height: 24px;
+  padding-left: 4px;
+  background: #d2d2d2;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+.lateral-izq input::-webkit-input-placeholder {
+  text-align: center;
+  color: #222;
+}
+.lateral-izq input:-moz-placeholder {
+  text-align: center;
+  color: #222;
+}
+.lateral-izq input:-ms-input-placeholder {
+  text-align: center;
+  color: #222;
+}
+.lateral-izq input[placeholder] {
+  text-align: center;
+  color: #222;
+}
+
+.lateral-izq input:focus{
+  text-align: left;
+}

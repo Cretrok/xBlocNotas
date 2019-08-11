@@ -19,9 +19,14 @@ class Nav extends Component {
   busqueda(event) {
     console.log(event.target.value);
   }
+  esconder(e){
+    const latIzq = document.querySelector('.lateral-izq');
+    latIzq.classList.remove("visible");
+  }
   render() {
     return (
-      <div>
+      <div className="lateral-izq">
+        <button onClick={this.esconder}><span className="ion-md-arrow-dropleft-circle"></span></button>
         <form>
           <input type="text" onInput={this.busqueda} placeholder="BUSCAR" />
         </form>

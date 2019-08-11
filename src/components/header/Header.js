@@ -3,15 +3,19 @@ import React, { Component } from "react";
 import "./Header.css";
 
 class Header extends Component {
+  lateralmovil(event){
+    const latIzq = document.querySelector('.lateral-izq');
+    latIzq.classList.add("visible");
+  }
   render() {
     let nav;
     let navMovil;
     if (this.props.name) {
       nav = (
-        <nav>
+        <nav className="nueva_nota">
           <ul>
             <li>
-              <a href="/">Nueva Nota</a>
+              <button>Nueva Nota</button>
             </li>
           </ul>
         </nav>
@@ -20,7 +24,7 @@ class Header extends Component {
         <nav className="movil_phone">
           <ul>
             <li>
-              <a href="/">Notas</a>
+              <button onClick={this.lateralmovil}>Notas</button>
             </li>
           </ul>
         </nav>

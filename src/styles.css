@@ -9,6 +9,10 @@ a{
   color: black;
 }
 
+ul, ol{
+  list-style: none;
+}
+
 .App {
   font-family: sans-serif;
 }
