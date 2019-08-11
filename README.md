@@ -1,2 +1,0 @@
-# xBlocNotas
-Created with CodeSandbox
