@@ -12,7 +12,7 @@ class Nav extends Component {
       .then(data => {
         console.log(data);
         data.reverse();
-        this.setState.notas = data;
+        this.setState({notas: data});
       });
   }
 

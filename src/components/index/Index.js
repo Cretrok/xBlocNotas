@@ -13,7 +13,7 @@ class Index extends Component {
   render() {
     return (
       <div className="contenedor">
-        <Nav />
+        <Nav name={this.state.nameUser} />
         <Header name={this.state.nameUser} />
         <Nota />
       </div>
