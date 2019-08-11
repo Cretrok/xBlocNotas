@@ -23,7 +23,7 @@ class Nav extends Component {
     return (
       <div>
         <form>
-          <input type="text" onInput={this.busqueda} />
+          <input type="text" onInput={this.busqueda} placeholder="BUSCAR" />
         </form>
         <nav>
           <ol>
