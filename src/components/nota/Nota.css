@@ -1,4 +1,4 @@
-.div_nota{
+.div_nota {
   height: calc(100vh - 64px);
   position: relative;
 }
@@ -7,7 +7,14 @@
   height: 100%;
 }
 
-input.title_nota{
+.contenedor_nota {
+  display: none;
+}
+.contenedor_nota.active {
+  display: block;
+}
+
+input.title_nota {
   width: 100%;
   border: 0;
   border-bottom: 1px solid #d2d2d2;
@@ -18,7 +25,7 @@ input.title_nota{
   color: #5d5d5d;
 }
 
-textarea{
+textarea {
   resize: none;
   width: 100%;
   border: 0;

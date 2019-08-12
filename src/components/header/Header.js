@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import "./Header.css";
 
 class Header extends Component {
-  lateralmovil(event){
-    const latIzq = document.querySelector('.lateral-izq');
+  lateralmovil(event) {
+    const latIzq = document.querySelector(".lateral-izq");
     latIzq.classList.add("visible");
   }
   render() {
@@ -24,7 +24,7 @@ class Header extends Component {
         <nav className="movil_phone">
           <ul>
             <li>
-              <button onClick={this.lateralmovil}>Notas</button>
+              <button onClick={this.lateralmovil.bind(this)}>Notas</button>
             </li>
           </ul>
         </nav>

@@ -8,14 +8,15 @@ import "./Index.css";
 
 class Index extends Component {
   state = {
-    nameUser: "cesar"
+    nameUser: "cesar",
+    notaActiva: ""
   };
   render() {
     return (
       <div className="contenedor">
-        <Nav name={this.state.nameUser} />
-        <Header name={this.state.nameUser} />
-        <Nota />
+        <Nav name={this.state.nameUser} nota={this.state.notaActiva} />
+        <Header name={this.state.nameUser} nota={this.state.notaActiva} />
+        <Nota name={this.state.nameUser} nota={this.state.notaActiva} />
       </div>
     );
   }
