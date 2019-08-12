@@ -35,7 +35,7 @@ class Nav extends Component {
             {this.state.notas.map((nota, index) => {
               return (
                 <li key={index}>
-                  <div>
+                  <div className="title-date-note">
                     <h2>{nota.data.title}</h2>
                     <p>{nota.data.fecha}</p>
                   </div>

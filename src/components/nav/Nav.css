@@ -6,7 +6,8 @@
   width: 180px;
   height: 100vh;
   background: #fff;
-  transition: all 500ms;
+  transition: left 500ms;
+  border-right: 1px solid #d2d2d2;
 }
 .lateral-izq.visible{
   left: 0;
@@ -63,4 +64,34 @@
 
 .lateral-izq input:focus{
   text-align: left;
+}
+
+.lateral-izq nav{
+  position: relative;
+  margin-top: 70px;
+}
+
+.lateral-izq li{
+  display: flex;
+  height: 50px;
+  align-items: center;
+  width: 95%;
+  float: right;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.title-date-note{
+  overflow: hidden;
+}
+
+.title-date-note h2 {
+  font-size: .9em;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title-date-note p{
+  font-size: .7em;
 }
