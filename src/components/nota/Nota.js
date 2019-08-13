@@ -17,7 +17,7 @@ class Nota extends Component {
 
   onChangeNote(e){
     console.log(e.target.id);
-    fetch(`https://coderoom-first-api-project.now.sh/${this.props.name}/data/${e.target.id}`,{
+    fetch(`https://15xm3.sse.codesandbox.io/${this.props.name}/data/${e.target.id}`,{
       method: "PUT",
       body: JSON.stringify({
         data: {
@@ -33,10 +33,10 @@ class Nota extends Component {
 
   componentDidMount() {
     if (this.props.name) {
-      fetch(`https://coderoom-first-api-project.now.sh/${this.props.name}/data`)
+      fetch(`https://15xm3.sse.codesandbox.io/${this.props.name}/data`)
         .then(response => response.json())
         .then(data => {
-          console.log(data);
+          //console.log(data);
           data.reverse();
           this.setState({ notas: data });
         });
