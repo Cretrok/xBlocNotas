@@ -54,7 +54,7 @@ class Nota extends Component {
               name="title"
               onInput={this.titleInput}
               id={nota.id}
-              onChange={this.onChangeNote}
+              onChange={this.onChangeNote.bind(this)}
             />
           </label>
           <label>
