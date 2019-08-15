@@ -49,3 +49,12 @@ textarea {
   color: #4a4a4a;
   font-family: sans-serif;
 }
+
+@media (min-width: 768px){
+  .div_nota{
+    width: calc(100% - 240px);
+    float: right;
+    position: relative;
+    top: 64px;
+  }
+}

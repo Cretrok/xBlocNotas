@@ -33,3 +33,22 @@
   font-size: 1em;
   cursor: pointer;
 }
+
+@media (min-width: 768px){
+  .header{
+    position: absolute;
+    width: calc(100% - 240px);
+    margin-left: 240px;
+    top: 0;
+  }
+
+  .header .container{
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+  }
+  
+  .header .movil_phone{
+    display: none;
+  }
+}

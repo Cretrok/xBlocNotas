@@ -99,3 +99,15 @@
 .hidden{
   display: none;
 }
+
+@media (min-width: 768px){
+  .lateral-izq {
+    width: 240px;
+    position: absolute;
+    left: 0;
+  }
+
+  .lateral-izq buTton{
+    display: none;
+  }
+}
