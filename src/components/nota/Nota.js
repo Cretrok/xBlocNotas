@@ -39,7 +39,7 @@ class Nota extends Component {
   }
 
   onChangeNote(e) {
-    console.log(e.target.id);
+    //console.log(e.target.id);
     fetch(
       `https://coderoom-first-api-project.now.sh/${this.props.name}/data/${
         e.target.id

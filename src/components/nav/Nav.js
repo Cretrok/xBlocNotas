@@ -27,6 +27,12 @@ class Nav extends Component {
     const latIzq = document.querySelector(".lateral-izq");
     latIzq.classList.remove("visible");
   }
+
+  updateAct(index) {
+    console.log(index);
+    this.props.updateActiva(index);
+  }
+
   render() {
     const listNote = this.props.notasArray
       .filter(nota => {
@@ -47,7 +53,7 @@ class Nav extends Component {
       })
       .map((nota, index) => {
         return (
-          <li key={index}>
+          <li key={index} onClick={() => this.updateAct(index)}>
             <div className="title-date-note">
               <h2>{nota.data.title}</h2>
               <p>{nota.data.fecha}</p>

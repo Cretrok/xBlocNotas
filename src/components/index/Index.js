@@ -34,6 +34,11 @@ class Index extends Component {
       })
     });
   };
+
+  updateActiva = updatedActiva => {
+    //let notaActiva = {...this.state.notaActiva}
+    this.setState({notaActiva: updatedActiva});
+  }
   render() {
     return (
       <div className="contenedor">
@@ -41,6 +46,7 @@ class Index extends Component {
           name={this.state.nameUser}
           nota={this.state.notaActiva}
           notasArray={this.state.notas}
+          updateActiva={this.updateActiva}
         />
         <Header name={this.state.nameUser} nota={this.state.notaActiva} />
         <Nota
