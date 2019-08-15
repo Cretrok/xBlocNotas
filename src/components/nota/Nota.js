@@ -15,20 +15,51 @@ class Nota extends Component {
     }
   }
 
-  onChangeNote(e){
-    console.log(e.target.id);
-    fetch(`https://15xm3.sse.codesandbox.io/${this.props.name}/data/${e.target.id}`,{
-      method: "PUT",
-      body: JSON.stringify({
-        data: {
-          title: e.target.value
+  onChangeTitle(e) {
+    fetch(
+      `https://coderoom-first-api-project.now.sh/${this.props.name}/data/${
+        e.target.id
+      }`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          data: {
+            title: e.target.value
+          }
+        }),
+        headers: {
+          "Content-Type": "application/json"
         }
-      }),
-      headers: {
-        "Content-Type": "application/json"
       }
-    })
-    .then(response => response.json())
+    )
+      .then(response => response.json())
+      .then(nota => {
+        this.props.updateNota(nota);
+      });
+  }
+
+  onChangeNote(e) {
+    console.log(e.target.id);
+    fetch(
+      `https://coderoom-first-api-project.now.sh/${this.props.name}/data/${
+        e.target.id
+      }`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          data: {
+            note: e.target.value
+          }
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    )
+      .then(response => response.json())
+      .then(nota => {
+        this.props.updateNota(nota);
+      });
   }
 
   componentDidMount() {
@@ -43,9 +74,16 @@ class Nota extends Component {
     }
   }
   render() {
-    const listNote = this.state.notas.map((nota, index) => {
+    const listNote = this.props.notasArray.map((nota, index) => {
+      let activa = "";
+      if (index === this.props.nota) {
+        activa = "active";
+      }
       return (
-        <div key={index} className="contenedor_nota">
+        <form key={index} className={activa + " contenedor_nota"}>
+          <button className="btn_eliminar" id={nota.id}>
+            Eliminar
+          </button>
           <label>
             <input
               defaultValue={nota.data.title}
@@ -54,19 +92,24 @@ class Nota extends Component {
               name="title"
               onInput={this.titleInput}
               id={nota.id}
-              onChange={this.onChangeNote.bind(this)}
+              onChange={this.onChangeTitle.bind(this)}
             />
           </label>
           <label>
-            <textarea name="note" defaultValue={nota.data.note} id={nota.id} onChange={this.onChangeNote.bind(this)}></textarea>
+            <textarea
+              name="note"
+              defaultValue={nota.data.note}
+              id={nota.id}
+              onChange={this.onChangeNote.bind(this)}
+            />
           </label>
-        </div>
+        </form>
       );
     });
 
     return (
       <div className="div_nota">
-        <form>{listNote}</form>
+        <div className="forms">{listNote}</div>
       </div>
     );
   }

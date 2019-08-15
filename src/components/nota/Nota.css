@@ -3,15 +3,29 @@
   position: relative;
 }
 
-.div_nota form {
+.div_nota .forms {
   height: 100%;
 }
 
 .contenedor_nota {
   display: none;
+  position: relative;
 }
 .contenedor_nota.active {
   display: block;
+}
+
+.contenedor_nota > button{
+  position: absolute;
+  right: 10px;
+  border: none;
+  background: #fff;
+  color: red;
+  cursor: pointer;
+  height: 23px;
+  line-height: 1em;
+  font-size: 1em;
+  padding: 1px 1px 0;
 }
 
 input.title_nota {

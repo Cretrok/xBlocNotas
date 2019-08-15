@@ -28,7 +28,7 @@ class Nav extends Component {
     latIzq.classList.remove("visible");
   }
   render() {
-    const listNote = this.state.notas
+    const listNote = this.props.notasArray
       .filter(nota => {
         return (
           nota.id
