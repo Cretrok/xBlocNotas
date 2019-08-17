@@ -1,4 +1,4 @@
-.lateral-izq{
+.lateral-izq {
   position: fixed;
   z-index: 999;
   left: -180px;
@@ -9,12 +9,12 @@
   transition: left 500ms;
   border-right: 1px solid #d2d2d2;
 }
-.lateral-izq.visible{
+.lateral-izq.visible {
   left: 0;
   transition: all 500ms;
 }
 
-.lateral-izq buTton{
+.lateral-izq button {
   outline: none;
   border: none;
   background: transparent;
@@ -23,7 +23,7 @@
   font-size: 24px;
   position: absolute;
   right: 0;
-  color: #00A99D;
+  color: #00a99d;
   cursor: pointer;
 }
 
@@ -33,7 +33,7 @@
   margin-top: 30px;
 }
 
-.lateral-izq form input{
+.lateral-izq form input {
   display: block;
   width: 90%;
   margin: 10px auto;
@@ -62,52 +62,57 @@
   color: #222;
 }
 
-.lateral-izq input:focus{
+.lateral-izq input:focus {
   text-align: left;
 }
 
-.lateral-izq nav{
+.lateral-izq nav {
   position: relative;
   margin-top: 70px;
 }
 
-.lateral-izq li{
+.lateral-izq li {
   display: flex;
   height: 50px;
   align-items: center;
-  width: 95%;
+  width: 98%;
   float: right;
   border-bottom: 1px solid #d2d2d2;
+  cursor: pointer;
+  padding-left: 5px;
+}
+.lateral-izq li.active {
+  background: rgba(255, 255, 0, 0.3);
 }
 
-.title-date-note{
+.title-date-note {
   overflow: hidden;
 }
 
 .title-date-note h2 {
-  font-size: .9em;
+  font-size: 0.9em;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.title-date-note p{
-  font-size: .7em;
+.title-date-note p {
+  font-size: 0.7em;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .lateral-izq {
     width: 240px;
     position: absolute;
     left: 0;
   }
 
-  .lateral-izq buTton{
+  .lateral-izq button {
     display: none;
   }
 }

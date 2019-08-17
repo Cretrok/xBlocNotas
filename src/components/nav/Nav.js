@@ -52,8 +52,16 @@ class Nav extends Component {
         );
       })
       .map((nota, index) => {
+        let activa = "";
+        if (index === this.props.nota) {
+          activa = "active";
+        }
         return (
-          <li key={index} onClick={() => this.updateAct(index)}>
+          <li
+            className={activa}
+            key={index}
+            onClick={() => this.updateAct(index)}
+          >
             <div className="title-date-note">
               <h2>{nota.data.title}</h2>
               <p>{nota.data.fecha}</p>

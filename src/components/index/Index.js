@@ -21,7 +21,7 @@ class Index extends Component {
       .then(response => response.json())
       .then(notas => {
         notas.reverse();
-        this.setState({ notas: notas });
+        this.setState({ notas });
       });
   }
   updateNota = updatedNota => {
@@ -37,9 +37,35 @@ class Index extends Component {
 
   updateActiva = updatedActiva => {
     //let notaActiva = {...this.state.notaActiva}
-    this.setState({notaActiva: updatedActiva});
-  }
+    this.setState({ notaActiva: updatedActiva });
+  };
+
+  deleteNota = deletedNota => {
+    this.setState({
+      notas: this.state.notas.filter(nota => nota.id !== deletedNota),
+      notaActiva: 0
+    });
+  };
+
+  newNota = notaNew => {
+    /*this.setState({
+      notas: this.state.notas.unshift(notaNew)
+    });*/
+    /*fetch(
+      `https://coderoom-first-api-project.now.sh/${this.state.nameUser}/data/`
+    )
+      .then(response => response.json())
+      .then(notas => {
+        notas.reverse();
+        this.setState({ notas: notas });
+      });*/
+    this.setState({
+      notas: [...this.state.notas, notaNew],
+      notaActiva: this.state.notas.length
+    });
+  };
   render() {
+    console.log(this.state.notas);
     return (
       <div className="contenedor">
         <Nav
@@ -48,12 +74,17 @@ class Index extends Component {
           notasArray={this.state.notas}
           updateActiva={this.updateActiva}
         />
-        <Header name={this.state.nameUser} nota={this.state.notaActiva} />
+        <Header
+          name={this.state.nameUser}
+          nota={this.state.notaActiva}
+          newNota={this.newNota}
+        />
         <Nota
           name={this.state.nameUser}
           nota={this.state.notaActiva}
           notasArray={this.state.notas}
           updateNota={this.updateNota}
+          deleteNota={this.deleteNota}
         />
       </div>
     );

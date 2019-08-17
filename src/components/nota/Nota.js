@@ -62,8 +62,21 @@ class Nota extends Component {
       });
   }
 
+  btnEliminar(e) {
+    e.preventDefault();
+    console.log(e.target);
+    fetch(
+      `https://coderoom-first-api-project.now.sh/${this.props.name}/data/${
+        e.target.id
+      }`,
+      {
+        method: "DELETE"
+      }
+    ).then(this.props.deleteNota(e.target.id));
+  }
+
   componentDidMount() {
-    if (this.props.name) {
+    /*if (this.props.name) {
       fetch(`https://15xm3.sse.codesandbox.io/${this.props.name}/data`)
         .then(response => response.json())
         .then(data => {
@@ -71,7 +84,7 @@ class Nota extends Component {
           data.reverse();
           this.setState({ notas: data });
         });
-    }
+    }*/
   }
   render() {
     const listNote = this.props.notasArray.map((nota, index) => {
@@ -81,7 +94,11 @@ class Nota extends Component {
       }
       return (
         <form key={index} className={activa + " contenedor_nota"}>
-          <button className="btn_eliminar" id={nota.id}>
+          <button
+            className="btn_eliminar"
+            id={nota.id}
+            onClick={this.btnEliminar.bind(this)}
+          >
             Eliminar
           </button>
           <label>
